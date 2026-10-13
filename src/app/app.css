@@ -1,0 +1,1462 @@
+
+:host {
+  display: block;
+  color: #17243a;
+  --navy: #0b1830;
+  --navy-light: #142846;
+  --red: #d62835;
+  --red-dark: #b91f2b;
+  --text: #26364e;
+  --muted: #64748b;
+  --border: #e3e8f0;
+  --surface: #f4f6fa;
+  --white: #ffffff;
+  --shadow-sm: 0 5px 18px rgb(16 33 59 / 5%);
+  --shadow-md: 0 14px 35px rgb(16 33 59 / 9%);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:host a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:host a:focus-visible {
+  outline: 3px solid #e84b57;
+  outline-offset: 4px;
+}
+
+:host section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 82px;
+  padding: 14px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgb(255 255 255 / 96%);
+  border-bottom: 1px solid rgb(227 232 240 / 80%);
+  box-shadow: 0 3px 18px rgb(16 33 59 / 4%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  color: var(--white);
+  background: linear-gradient(145deg, #e43a46, #b91f2b);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 0 5px 12px rgb(214 40 53 / 20%);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 15px;
+  letter-spacing: 0.6px;
+}
+
+.brand small {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: 0.8px;
+  line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+nav a {
+  position: relative;
+  padding: 10px 9px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav a::after {
+  position: absolute;
+  right: 9px;
+  bottom: 3px;
+  left: 9px;
+  height: 2px;
+  background: var(--red);
+  border-radius: 2px;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-call,
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-call {
+  flex-shrink: 0;
+  color: var(--white);
+  background: var(--red);
+  box-shadow: 0 5px 12px rgb(214 40 53 / 14%);
+}
+
+.nav-call:hover,
+.btn-red:hover {
+  color: var(--white);
+  background: var(--red-dark);
+  box-shadow: 0 8px 18px rgb(214 40 53 / 20%);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  padding: 78px 8%;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      90deg,
+      #09162c 0%,
+      rgb(9 22 44 / 85%) 45%,
+      rgb(9 22 44 / 30%) 100%
+    ),
+    url('/security-hero.png') center / cover no-repeat;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 780px;
+}
+
+.eyebrow,
+.section-tag {
+  display: inline-block;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  max-width: 100%;
+  padding: 9px 13px;
+  color: #ffffff;
+  background: rgb(255 255 255 / 6%);
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 5px;
+}
+
+.hero h1 {
+  margin: 25px 0 20px;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+  overflow-wrap: break-word;
+}
+
+.hero h1 span {
+  color: #ff6570;
+}
+
+.hero-content > p {
+  max-width: 590px;
+  margin: 0;
+  color: #d8e1ee;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn-red {
+  color: var(--white);
+  background: var(--red);
+  box-shadow: 0 7px 18px rgb(214 40 53 / 16%);
+}
+
+.btn-outline {
+  color: var(--white);
+  background: rgb(255 255 255 / 5%);
+  border-color: rgb(255 255 255 / 55%);
+}
+
+.btn-outline:hover {
+  color: var(--navy);
+  background: var(--white);
+  border-color: var(--white);
+}
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+  color: #d8e1ee;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  background: #ff6570;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgb(255 101 112 / 14%);
+}
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+.section {
+  padding: 84px 8%;
+}
+
+.section h2 {
+  margin: 13px 0 17px;
+  color: var(--navy);
+  font-size: clamp(29px, 4vw, 43px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  overflow-wrap: break-word;
+}
+
+.section h2 span {
+  color: var(--red);
+}
+
+.section-intro {
+  max-width: 650px;
+  margin: 0 auto 38px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about > p,
+.contact > p {
+  max-width: 760px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+/* =========================
+   SERVICE CARDS
+========================= */
+
+.services {
+  background: var(--surface);
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.service-card {
+  min-width: 0;
+  padding: 29px 26px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: #f0b8bd;
+  box-shadow: var(--shadow-md);
+}
+
+.service-icon,
+.industry-icon,
+.area-pin {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--red);
+  background: #fff0f1;
+  border: 1px solid #ffe0e3;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.service-card h3 {
+  margin: 21px 0 10px;
+  color: var(--navy);
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* =========================
+   INDUSTRIES
+========================= */
+
+.industries {
+  background: var(--white);
+  text-align: center;
+}
+
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 38px auto 0;
+  text-align: left;
+}
+
+.industry-card {
+  min-width: 0;
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgb(16 33 59 / 3%);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  border-color: #f0b8bd;
+  box-shadow: var(--shadow-md);
+}
+
+.industry-icon {
+  width: 43px;
+  height: 43px;
+  margin-bottom: 18px;
+}
+
+.industry-card h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 17px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.industry-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+/* =========================
+   SERVICE AREAS
+========================= */
+
+.service-areas {
+  background: var(--surface);
+  text-align: center;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 1100px;
+  margin: 38px auto 0;
+  text-align: left;
+}
+
+.area-card {
+  min-width: 0;
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.area-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.area-pin {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 19px;
+}
+
+.area-card h3 {
+  margin: 0 0 12px;
+  color: var(--navy);
+  font-size: 19px;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+.area-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.area-card span {
+  display: inline-block;
+  margin-top: 13px;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  background: var(--white);
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 42px auto 34px;
+  text-align: left;
+}
+
+.contact-item {
+  min-width: 0;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-wrap: anywhere;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-item:hover {
+  border-color: #f0b8bd;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-item small {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.contact-item a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 9px;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+  color: var(--red);
+}
+
+.contact-item p {
+  margin: 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.contact > .btn {
+  margin-top: 4px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 30px 7%;
+  background: var(--navy);
+}
+
+.footer-brand {
+  color: var(--white);
+}
+
+.footer-brand small {
+  color: #c0cada;
+}
+
+footer > p {
+  margin: 0;
+  color: #c0cada;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+footer > a:last-child {
+  color: var(--white);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+  .navbar {
+    gap: 14px;
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand strong {
+    font-size: 13px;
+  }
+
+  .brand small {
+    font-size: 8px;
+    letter-spacing: 0.4px;
+  }
+
+  nav {
+    gap: 3px;
+  }
+
+  nav a {
+    padding: 9px 6px;
+    font-size: 12px;
+  }
+
+  .nav-call {
+    padding: 0 15px;
+    font-size: 13px;
+  }
+
+  .section {
+    padding: 70px 6%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 5%;
+  }
+
+  .brand {
+    flex: 1 1 180px;
+    gap: 9px;
+  }
+
+  .brand strong {
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  .brand small {
+    font-size: 7px;
+    letter-spacing: 0.4px;
+  }
+
+  .logo {
+    width: 39px;
+    height: 39px;
+    font-size: 17px;
+  }
+
+  .nav-call {
+    min-height: 39px;
+    padding: 0 13px;
+    font-size: 12px;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 5px 12px;
+  }
+
+  nav a {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+
+  nav a::after {
+    right: 5px;
+    bottom: 2px;
+    left: 5px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 58px 6%;
+    background-position: 65% center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    padding: 8px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .hero h1 {
+    margin: 22px 0 16px;
+    font-size: clamp(30px, 7.8vw, 43px);
+    line-height: 1.17;
+    letter-spacing: -0.8px;
+  }
+
+  .hero-content > p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-note {
+    align-items: flex-start;
+    margin-top: 25px;
+    font-size: 12px;
+  }
+
+  .section {
+    padding: 56px 5%;
+    scroll-margin-top: 130px;
+  }
+
+  .section h2 {
+    font-size: clamp(27px, 6.8vw, 35px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .about > p,
+  .contact > p {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  .section-intro {
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .service-grid,
+  .industry-grid,
+  .areas-grid,
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+    margin-top: 27px;
+  }
+
+  .service-card,
+  .industry-card,
+  .area-card {
+    padding: 24px 21px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .industry-card h3,
+  .area-card h3 {
+    font-size: 18px;
+  }
+
+  .contact-item {
+    padding: 21px;
+  }
+
+  .contact-grid {
+    margin-bottom: 28px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 27px 5%;
+  }
+
+  footer > p {
+    font-size: 12px;
+  }
+}
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 380px) {
+  .navbar {
+    gap: 10px;
+    padding-right: 4%;
+    padding-left: 4%;
+  }
+
+  .brand {
+    flex-basis: 155px;
+    gap: 7px;
+  }
+
+  .brand strong {
+    font-size: 11px;
+  }
+
+  .brand small {
+    font-size: 6px;
+    letter-spacing: 0.2px;
+  }
+
+  .logo {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .nav-call {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  nav {
+    gap: 4px 9px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .hero {
+    padding: 48px 5%;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+    letter-spacing: -0.5px;
+  }
+
+  .section {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+/* ACCESSIBILITY: REDUCE MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  :host *,
+  :host *::before,
+  :host *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+footer .logo img {
+  width: 48px;
+  height: 48px;
+}
+
+@media (max-width: 600px) {
+  .navbar .logo img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* FIX LOGO BACKGROUND IN HEADER AND FOOTER */
+
+.navbar .brand .logo,
+footer .footer-brand .logo {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+/* Remove decorative red shapes behind logo */
+.navbar .brand .logo::before,
+.navbar .brand .logo::after,
+footer .footer-brand .logo::before,
+footer .footer-brand .logo::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep original logo proportions */
+.navbar .brand .logo img,
+footer .footer-brand .logo img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Footer logo slightly smaller */
+footer .footer-brand .logo {
+  width: 48px;
+  height: 48px;
+  flex-basis: 48px;
+}
+
+/* Security Guards card background */
+.service-card-guards {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.25),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/guard.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.service-card-guards h3,
+.service-card-guards p {
+  color: #fff;
+}
+
+.service-card-guards .service-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Ladies Guards card background */
+.service-card-ladies {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.25),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/ladiesGuard.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.service-card-ladies h3,
+.service-card-ladies p {
+  color: #fff;
+}
+
+.service-card-ladies .service-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Gunman & Bouncers card background */
+.service-card-bouncer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.25),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/bouncer.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.service-card-bouncer h3,
+.service-card-bouncer p {
+  color: #fff;
+}
+
+.service-card-bouncer .service-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Fix image cropping in service cards */
+.service-card-ladies,
+.service-card-bouncer {
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+}
+
+/* Skilled & Unskilled Labour card background */
+.service-card-labour {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.25),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/skilled-unskilled.jpeg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.service-card-labour h3,
+.service-card-labour p {
+  color: #fff;
+}
+
+.service-card-labour .service-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Helpers & Machine Operators card background */
+.service-card-operators {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.25),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/operator.jpeg');
+
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.service-card-operators h3,
+.service-card-operators p {
+  color: #fff;
+}
+
+.service-card-operators .service-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Housekeeping Staff card background */
+.service-card-housekeeping {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.25),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/housekeeping.jpeg');
+
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.service-card-housekeeping h3,
+.service-card-housekeeping p {
+  color: #fff;
+}
+
+.service-card-housekeeping .service-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Factories & Manufacturing card background */
+.industry-card-factories {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/Factories.png');
+
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+
+  border-color: transparent;
+  color: #fff;
+}
+
+.industry-card-factories h3,
+.industry-card-factories p {
+  color: #fff;
+}
+
+.industry-card-factories .industry-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Corporate Offices card background */
+.industry-card-offices {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/Corporate.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.industry-card-offices h3,
+.industry-card-offices p {
+  color: #fff;
+}
+
+.industry-card-offices .industry-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Residential Societies card background */
+.industry-card-societies {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/Societies.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.industry-card-societies h3,
+.industry-card-societies p {
+  color: #fff;
+}
+
+.industry-card-societies .industry-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Hospitals & Clinics card background */
+.industry-card-hospitals {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/Hospitals.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.industry-card-hospitals h3,
+.industry-card-hospitals p {
+  color: #fff;
+}
+
+.industry-card-hospitals .industry-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Commercial Facilities card background */
+.industry-card-commercial {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/Commercial.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.industry-card-commercial h3,
+.industry-card-commercial p {
+  color: #fff;
+}
+
+.industry-card-commercial .industry-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Warehouses card background */
+.industry-card-warehouses {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/Warehouses.png');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.industry-card-warehouses h3,
+.industry-card-warehouses p {
+  color: #fff;
+}
+
+.industry-card-warehouses .industry-icon {
+  background: #fff;
+  color: #e11d2e;
+  border-color: transparent;
+}
+
+/* Bulandshahr area card background */
+.area-card-bulandshahr {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/bulandshahr.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.area-card-bulandshahr h3,
+.area-card-bulandshahr p {
+  color: #fff;
+}
+
+/* Sikandrabad area card background */
+.area-card-sikandrabad {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/sikandrabad.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.area-card-sikandrabad h3,
+.area-card-sikandrabad p {
+  color: #fff;
+}
+
+/* Babugarh area card background */
+.area-card-babugarh {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 42, 0.20),
+      rgba(8, 20, 42, 0.88)
+    ),
+    url('/babugarh.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-color: transparent;
+  color: #fff;
+}
+
+.area-card-babugarh h3,
+.area-card-babugarh p {
+  color: #fff;
+}

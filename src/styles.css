@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  font-family: "Inter", Arial, sans-serif;
+  color: #172033;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --navy: #10284c;
+  --navy-dark: #091a32;
+  --red: #d92735;
+  --text: #172033;
+  --muted: #69758a;
+  --surface: #f5f7fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background: #fff;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #d92735;
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 3px solid #f27b84;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
